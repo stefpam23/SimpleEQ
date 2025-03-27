@@ -12,7 +12,21 @@
 
 //==============================================================================
 
+enum Slope
+{
 
+
+    Slope_12,
+
+
+    Slope_24,
+
+
+    Slope_36,
+
+
+    Slope_48
+};
 
 struct ChainSettings
 {
@@ -20,7 +34,7 @@ struct ChainSettings
 
     float lowCutFreq{ 0 }, highCutFreq{ 0 };
 
-    int lowCutSlope{ 0 }, highCutSlope{ 0 };
+    Slope lowCutSlope{ Slope::Slope_12 }, highCutSlope{ Slope::Slope_12 };
 
 };
 ChainSettings getChainSettings(juce::AudioProcessorValueTreeState& apvts);
